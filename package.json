@@ -1,0 +1,26 @@
+{
+  "name": "com-bitsparx-plugins-applemusicplaylists",
+  "version": "1.0.0",
+  "description": "Cordova Apple Music Playlists",
+  "cordova": {
+    "id": "com-bitsparx-plugins-applemusicplaylists",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "url": "../applemusicplaylists"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "bitsparx",
+  "license": "ISC"
+}
