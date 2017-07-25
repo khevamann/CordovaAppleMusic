@@ -10,6 +10,7 @@
 - (void) pause:(CDVInvokedUrlCommand*)command;
 - (void) playTrack:(CDVInvokedUrlCommand*)command;
 - (void) getPlayLists:(CDVInvokedUrlCommand*)command;
+- (void) addSongstoPlayList:(CDVInvokedUrlCommand*)command;
 - (void) createPlayList:(CDVInvokedUrlCommand*)command;
 - (void) getSongs:(CDVInvokedUrlCommand*)command;
 - (void) requestAuthorization:(CDVInvokedUrlCommand*)command;

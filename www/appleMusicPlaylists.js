@@ -26,6 +26,9 @@ module.exports = {
     getPlayLists: function (successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusicPlaylists", "getPlayLists", []);
     },
+    addSongstoPlayList: function (playListId, songIds, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AppleMusicPlaylists", "addSongstoPlayList", [playListId, songIds]);
+    },
     getSongs: function (playlistId, successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusicPlaylists", "getSongs", [playlistId]);
     },
