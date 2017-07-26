@@ -3,11 +3,15 @@ Access Apple Music from Cordova
 
 
 #### Initialize the plugin 
-  appleMusicPlaylists.init(successFunction, failureFunction)  
-   
+```
+appleMusicPlaylists.init(successFunction, failureFunction)  
+```
+
 #### Request Authorization 
-  appleMusicPlaylists.requestAuthorization(function(isAuthorized){}, failureFunction) 
- 
+```
+appleMusicPlaylists.requestAuthorization(function(isAuthorized){}, failureFunction) 
+```
+
 #### Get Play Lists 
 ```
   appleMusicPlaylists.getPlayLists(function(playLists){}, failureFunction) 
