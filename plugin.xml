@@ -17,7 +17,7 @@
 	    </config-file>
         <config-file target="*-Info.plist">
             <key>NSAppleMusicUsageDescription</key>
-            <string>MyUsageMessage</string>
+            <string>Allow this app access to your Music Library.</string>
         </config-file>
 
 		<header-file src="src/ios/CordovaAppleMusicPlaylists.h" target-dir="AppleMusicPlaylists"/>
