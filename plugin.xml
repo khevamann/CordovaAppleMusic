@@ -15,11 +15,11 @@
 	        <param name="onload" value="true" />
 	      </feature>
 	    </config-file>
-        <config-file target="*-Info.plist">
-            <key>NSAppleMusicUsageDescription</key>
-            <string>Allow this app access to your Music Library.</string>
-        </config-file>
-
+	    <config-file target="*-Info.plist" parent="NSAppleMusicUsageDescription">
+    	        <array>
+        	    <string>Allow this app access to your Music Library.</string>
+    		</array>
+	    </config-file>
 		<header-file src="src/ios/CordovaAppleMusicPlaylists.h" target-dir="AppleMusicPlaylists"/>
 		<source-file src="src/ios/CordovaAppleMusicPlaylists.m" target-dir="AppleMusicPlaylists"/>
   	</platform>
