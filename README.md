@@ -2,6 +2,22 @@
 Access Apple Music from Cordova
 
 
+## Installation
+
+```bash
+cordova plugin add https://github.com/khevamann/CordovaAppleMusic
+```
+
+## Usage
+
+```js
+appleMusicPlaylists.init((data) => {
+      console.log("Plugin Initialized")
+    }, (err) => {
+      console.log("Error Initializing Plugin")
+    })
+```
+
 #### Initialize the plugin 
 ```
 appleMusicPlaylists.init(successFunction, failureFunction)  
