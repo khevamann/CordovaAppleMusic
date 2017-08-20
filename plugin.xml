@@ -16,9 +16,7 @@
 	      </feature>
 	    </config-file>
 	    <config-file target="*-Info.plist" parent="NSAppleMusicUsageDescription">
-    	        <array>
-        	    <string>Allow this app access to your Music Library.</string>
-    		</array>
+       	      <string>Allow this app access to your Music Library.</string>
 	    </config-file>
 		<header-file src="src/ios/CordovaAppleMusicPlaylists.h" target-dir="AppleMusicPlaylists"/>
 		<source-file src="src/ios/CordovaAppleMusicPlaylists.m" target-dir="AppleMusicPlaylists"/>
