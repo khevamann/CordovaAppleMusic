@@ -1,15 +1,16 @@
 {
-  "name": "com-bitsparx-plugins-applemusicplaylists",
+  "name": "com-khevamann-plugins-applemusic",
   "version": "1.0.0",
-  "description": "Cordova Apple Music Playlists",
+  "description": "Cordova Apple Music",
   "cordova": {
-    "id": "com-bitsparx-plugins-applemusicplaylists",
+    "id": "com-khevamann-plugins-applemusic",
     "platforms": [
       "ios"
     ]
   },
-  "repository": {
-    "url": "../applemusicplaylists"
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khevamann/CordovaAppleMusic.git"
   },
   "keywords": [
     "ecosystem:cordova",
@@ -21,6 +22,6 @@
       "version": ">=3.4.0"
     }
   ],
-  "author": "bitsparx",
+  "author": "khevamann",
   "license": "ISC"
 }
