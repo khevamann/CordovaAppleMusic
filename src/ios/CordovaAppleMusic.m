@@ -5,7 +5,7 @@
 @import MediaPlayer;
 @import StoreKit;
 
-@implementation CordovaAppleMusicPlaylists
+@implementation CordovaAppleMusic
 
 - (void)init:(CDVInvokedUrlCommand*)command
 {
