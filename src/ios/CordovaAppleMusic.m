@@ -1,4 +1,4 @@
-#import "CordovaAppleMusicPlaylists.h"
+#import "CordovaAppleMusic.h"
 
 @import NotificationCenter;
 @import MediaPlayer;
