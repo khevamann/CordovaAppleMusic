@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com-bitsparx-plugins-applemusicplaylists" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com-khevamann-plugins-applemusic" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <engines>
     	<engine name="cordova" version=">=3.4.0"/>
     </engines>
-    <name>Cordova Apple Music Playlists</name>
-    <js-module name="appleMusicPlaylists" src="www/appleMusicPlaylists.js">
-        <clobbers target="appleMusicPlaylists" />
+    <name>Cordova Apple Music</name>
+    <js-module name="appleMusic" src="www/appleMusic.js">
+        <clobbers target="appleMusic" />
     </js-module>
 
     <platform name="ios">
 	    <config-file target="config.xml" parent="/widget">
-	      <feature name="AppleMusicPlaylists">
-	        <param name="ios-package" value="CordovaAppleMusicPlaylists" />
+	      <feature name="AppleMusic">
+	        <param name="ios-package" value="CordovaAppleMusic" />
 	        <param name="onload" value="true" />
 	      </feature>
 	    </config-file>
 	    <config-file target="*-Info.plist" parent="NSAppleMusicUsageDescription">
-       	      <string>Allow this app access to your Music Library.</string>
+       	      <string>Allow access to your Music Library.</string>
 	    </config-file>
-		<header-file src="src/ios/CordovaAppleMusicPlaylists.h" target-dir="AppleMusicPlaylists"/>
-		<source-file src="src/ios/CordovaAppleMusicPlaylists.m" target-dir="AppleMusicPlaylists"/>
+		<header-file src="src/ios/CordovaAppleMusic.h" target-dir="AppleMusic"/>
+		<source-file src="src/ios/CordovaAppleMusic.m" target-dir="AppleMusic"/>
   	</platform>
 
 </plugin>
