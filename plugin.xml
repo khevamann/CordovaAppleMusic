@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com-khevamann-plugins-applemusic" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-applemusic" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
     <engines>
-    	<engine name="cordova" version=">=3.4.0"/>
+        <engine name="cordova" version=">=3.4.0"/>
     </engines>
     <name>Cordova Apple Music</name>
     <js-module name="appleMusic" src="www/appleMusic.js">
-        <clobbers target="appleMusic" />
+        <clobbers target="appleMusic"/>
     </js-module>
 
     <platform name="ios">
-	    <config-file target="config.xml" parent="/widget">
-	      <feature name="AppleMusic">
-	        <param name="ios-package" value="CordovaAppleMusic" />
-	        <param name="onload" value="true" />
-	      </feature>
-	    </config-file>
-	    <config-file target="*-Info.plist" parent="NSAppleMusicUsageDescription">
-       	      <string>Allow access to your Music Library.</string>
-	    </config-file>
-		<header-file src="src/ios/CordovaAppleMusic.h" target-dir="AppleMusic"/>
-		<source-file src="src/ios/CordovaAppleMusic.m" target-dir="AppleMusic"/>
-  	</platform>
+        <config-file target="config.xml" parent="/widget">
+            <feature name="AppleMusic">
+                <param name="ios-package" value="CordovaAppleMusic"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSAppleMusicUsageDescription">
+            <string>Allow access to your Music Library.</string>
+        </config-file>
+        <header-file src="src/ios/CordovaAppleMusic.h"/>
+        <source-file src="src/ios/CordovaAppleMusic.m"/>
+    </platform>
 
 </plugin>

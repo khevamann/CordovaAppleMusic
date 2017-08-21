@@ -1,14 +1,14 @@
 {
-  "name": "com-khevamann-plugins-applemusic",
-  "version": "1.0.0",
+  "name": "cordova-plugin-applemusic",
+  "version": "1.0.1",
   "description": "Cordova Apple Music",
   "cordova": {
-    "id": "com-khevamann-plugins-applemusic",
+    "id": "cordova-plugin-applemusic",
     "platforms": [
       "ios"
     ]
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/khevamann/CordovaAppleMusic.git"
   },
