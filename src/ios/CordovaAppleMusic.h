@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 
-@interface CordovaAppleMusicPlaylists : CDVPlugin
+@interface CordovaAppleMusic : CDVPlugin
 
 - (void) getCountryCode:(CDVInvokedUrlCommand*)command;
 - (void) getDuration:(CDVInvokedUrlCommand*)command;
