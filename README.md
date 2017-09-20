@@ -5,7 +5,7 @@ Access Apple Music from Cordova
 ## Installation
 
 ```bash
-cordova plugin add https://github.com/khevamann/CordovaAppleMusic
+cordova plugin add cordova-plugin-applemusic
 ```
 
 ## Usage
