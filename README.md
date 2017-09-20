@@ -63,8 +63,6 @@ Queues a track by id.
 
 Example id: itunes.apple.com/fr/album/unstoppable/id984653860?i=<b>984653861</b>
 
-### Music Player Methods
-
 The following methods will allow you to manipulate the currently playing track.
 
 #### Get Current Track Duration
