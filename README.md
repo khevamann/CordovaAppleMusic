@@ -1,6 +1,5 @@
 # CordovaAppleMusic
-Access Apple Music from Cordova
-
+Access Apple Music from Cordova. This plugin was built to extend zwand19's plugin, and provides other features that the original plugin does not have. Please feel free to ask me any questions you may have.
 
 ## Installation
 
