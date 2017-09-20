@@ -40,15 +40,15 @@ appleMusic.getSongs(playListId, function(songList){}, failureFunction)
 ```
 Return: songList is an array with each index containing id, name fields; 
  
-#### Create Play List 
+#### Create Play List with Songs
 ```
-appleMusic.createPlayList(playListName, function(status){}, failureFunction) 
+appleMusic.createPlayList(playListName, trackIds, function(status){}, failureFunction) 
 ```
 return: status success on play list creation. 
    
-#### Add songs to playlist 
+#### Add Single Song to Playlist 
 ```
-appleMusic.addSongstoPlayList(playListId, trackIds,  function(status){}, failureFunction) 
+appleMusic.addSongstoPlayList(playListId, trackId,  function(status){}, failureFunction) 
 ```
 Return: status success on song addition. 
 Arguments: Playlist id, array of track ids 
