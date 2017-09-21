@@ -1,8 +1,11 @@
 var exec = require('cordova/exec');
 
-window.appleMusicPluginPlaying = (function(){})
-window.appleMusicPluginSeeked = (function(){})
-window.appleMusicPluginStopped = (function(){})
+window.appleMusicPluginPlaying = (function () {
+});
+window.appleMusicPluginSeeked = (function () {
+});
+window.appleMusicPluginStopped = (function () {
+});
 module.exports = {
     getCountryCode: function (successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "getCountryCode", []);
@@ -22,22 +25,22 @@ module.exports = {
     getPlayLists: function (successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "getPlayLists", []);
     },
-    addSongstoPlayList: function (playListId, songIds, successCallback, errorCallback) {
-        exec(successCallback, errorCallback, "AppleMusic", "addSongstoPlayList", [playListId, songIds]);
+    addSongtoPlayList: function (playListId, songId, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AppleMusic", "addSongtoPlayList", [playListId, songId]);
     },
     getSongs: function (playlistId, successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "getSongs", [playlistId]);
     },
-    createPlayList: function (playlistName, successCallback, errorCallback) {
-        exec(successCallback, errorCallback, "AppleMusic", "createPlayList", [playlistName]);
+    createPlayList: function (playlistName, songIds, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AppleMusic", "createPlayList", [playlistName, songIds]);
     },
-    onPlay: function(f) {
+    onPlay: function (f) {
         window.appleMusicPluginPlaying = f
     },
-    onSeek: function(f) {
+    onSeek: function (f) {
         window.appleMusicPluginSeeked = f
     },
-    onStop: function(f) {
+    onStop: function (f) {
         window.appleMusicPluginStopped = f
     },
     pause: function (successCallback, errorCallback) {
