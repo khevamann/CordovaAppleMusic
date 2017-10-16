@@ -344,15 +344,14 @@
         songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
         songArtist = [song valueForProperty: MPMediaItemPropertyArtist];
         songAlbum = [song valueForProperty: MPMediaItemPropertyAlbumTitle];
-        songID = [song valueForProperty: MPMediaItemPropertyPersistentID];
+        songID = [song valueForProperty: MPMediaItemPropertyPlaybackStoreID];
         i++;
-        NSString *numStr = [NSString stringWithFormat:@"%lld", [songID unsignedLongLongValue]];
 
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict[@"name"] = songTitle;
         dict[@"artist"] = songArtist;
         dict[@"album"] = songAlbum;
-        dict[@"id"]=numStr;
+        dict[@"id"]= songID;
         [arrayout addObject:dict];
         NSLog(@"Appended Array: '%@'",arrayout);
     }
@@ -413,7 +412,8 @@
         [self.commandDelegate evalJs:@"window.appleMusicPluginSeeked()"];
         } else if (state == MPMusicPlaybackStatePlaying) {
         [self.commandDelegate evalJs:@"window.appleMusicPluginPlaying()"];
-    }
+    }else{
+ [self.commandDelegate evalJs:@"window.appleMusicPluginPlaying()"];
 }
-
+}
 @end

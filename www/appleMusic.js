@@ -1,10 +1,13 @@
 var exec = require('cordova/exec');
 
 window.appleMusicPluginPlaying = (function () {
+    console.log("PLAYHUDIUDNDK")
 });
 window.appleMusicPluginSeeked = (function () {
+    console.log("SEEKHUDIUDNDK")
 });
 window.appleMusicPluginStopped = (function () {
+    console.log("STOPHUDIUDNDK")
 });
 module.exports = {
     getCountryCode: function (successCallback, errorCallback) {
@@ -35,13 +38,14 @@ module.exports = {
         exec(successCallback, errorCallback, "AppleMusic", "createPlayList", [playlistName, songIds]);
     },
     onPlay: function (f) {
+        console.log("YEYYYEYYE", f);
         window.appleMusicPluginPlaying = f
     },
     onSeek: function (f) {
         window.appleMusicPluginSeeked = f
     },
     onStop: function (f) {
-        window.appleMusicPluginStopped = f
+        //window.appleMusicPluginStopped = f
     },
     pause: function (successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "pause", []);
