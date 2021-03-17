@@ -4,7 +4,7 @@ Access Apple Music from Cordova. I built this plugin to extend zwand19's plugin,
 ## Installation
 
 ```bash
-cordova plugin add cordova-plugin-applemusic
+cordova plugin add https://github.com/haoflynet/CordovaAppleMusic.git
 ```
 
 ## Usage
@@ -15,9 +15,13 @@ appleMusic.init(successFunction, failureFunction)
 ```
 Run `init()` to listen to native events.
 
-#### Request Authorization 
+#### Request Authorization & Token
 ```js
-appleMusic.requestAuthorization(function(isAuthorized){}, failureFunction) 
+appleMusic.requestAuthorization(function(isAuthorized){
+  if (isAuthorized) {
+    appleMusic.requestToken(`${DEVELOPER_TOKEN}`, function(token) {}, failureFunction)
+  }
+}, failureFunction) 
 ```
 
 #### Get Play Lists 
