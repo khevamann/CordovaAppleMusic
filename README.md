@@ -15,29 +15,42 @@ appleMusic.init(successFunction, failureFunction)
 ```
 Run `init()` to listen to native events.
 
-#### Request Authorization 
+#### Request Authorization
 ```js
-appleMusic.requestAuthorization(function(isAuthorized){}, failureFunction) 
+appleMusic.requestAuthorization(function(isAuthorized){}, failureFunction)
+```
+
+#### Request Token
+
+- The `DEVELOPER_TOKEN` is generated from [Create a MusicKit identifier and private key](https://help.apple.com/developer-account/#/devce5522674) | [中文版本](https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E5%95%8F%E9%A1%8C%E8%A7%A3%E7%AD%94%E9%9B%86/%E7%94%9F%E6%88%90-musickit-app-%E9%9C%80%E8%A6%81%E7%9A%84-developer-token-1e4195f517e0)
+
+```javascript
+appleMusic.requestAuthorization(function(isAuthorized){
+  if (isAuthorized) {
+    appleMusic.requestToken(`${DEVELOPER_TOKEN}`, function(token) {}, failureFunction)
+  }
+}, failureFunction)
 ```
 
 #### Get Play Lists 
+
 ```js
   appleMusic.getPlayLists(function(playLists){}, failureFunction) 
-```  
+```
 Return: playLists is an array with each index containing id, name fields; 
-   
+
 #### Get Songs 
 ```js
 appleMusic.getSongs(playListId, function(songList){}, failureFunction) 
 ```
 Return: songList is an array with each index containing id, name fields; 
- 
+
 #### Create Play List with Songs
 ```js
 appleMusic.createPlayList(playListName, trackIds, function(status){}, failureFunction) 
 ```
 return: status success on play list creation. 
-   
+
 #### Add Single Song to Playlist 
 ```js
 appleMusic.addSongstoPlayList(playListId, trackId,  function(status){}, failureFunction) 

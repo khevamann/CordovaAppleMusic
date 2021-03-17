@@ -13,6 +13,7 @@
 - (void) addSongtoPlayList:(CDVInvokedUrlCommand*)command;
 - (void) createPlayList:(CDVInvokedUrlCommand*)command;
 - (void) getSongs:(CDVInvokedUrlCommand*)command;
+- (void) requestToken:(CDVInvokedUrlCommand*)command;
 - (void) requestAuthorization:(CDVInvokedUrlCommand*)command;
 - (void) resume:(CDVInvokedUrlCommand*)command;
 - (void) seek:(CDVInvokedUrlCommand*)command;

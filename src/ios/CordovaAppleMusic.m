@@ -10,12 +10,12 @@
 - (void)init:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = [command callbackId];
-    
+
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(handlePlaybackStateChanged:) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:[MPMusicPlayerController systemMusicPlayer]];
-    
+
     [[MPMusicPlayerController systemMusicPlayer] beginGeneratingPlaybackNotifications];
-    
+
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
     [self.commandDelegate sendPluginResult:result callbackId:callbackId];
 }
@@ -23,12 +23,12 @@
 - (void)getStatus:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = [command callbackId];
-    
+
     SKCloudServiceAuthorizationStatus status = [SKCloudServiceController authorizationStatus];
-    
+
     int res = -1;
     CDVCommandStatus callbackStatus = CDVCommandStatus_OK;
-    
+
     switch (status){
         case SKCloudServiceAuthorizationStatusNotDetermined: res = 0; break;
         case SKCloudServiceAuthorizationStatusDenied: res = 1; break;
@@ -36,9 +36,39 @@
         case SKCloudServiceAuthorizationStatusRestricted: res = 3; break;
         default: callbackStatus = CDVCommandStatus_ERROR;
     }
-    
+
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:callbackStatus messageAsInt:res];
     [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+}
+
+- (void)requestToken:(CDVInvokedUrlCommand*)command
+{
+    NSString* callbackId = [command callbackId];
+    NSString* developerToken = [[command arguments] objectAtIndex:0];
+    SKCloudServiceController *serviceController = [[SKCloudServiceController alloc] init];
+    if (@available(iOS 11.0, *)) {
+        [serviceController requestUserTokenForDeveloperToken:developerToken completionHandler:^(NSString * _Nullable userToken, NSError * _Nullable error) {
+             if (error != nil) {
+                 NSLog(@"userToken_Error :%@", error);
+                 CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.description];
+                 [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+             }
+             else{
+                 CDVPluginResult* result  = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:userToken];
+                 [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+             }
+         }];
+    } else {
+        [serviceController requestPersonalizationTokenForClientToken:developerToken withCompletionHandler:^(NSString * _Nullable personalizationToken, NSError * _Nullable error) {
+            if (error != nil) {
+                CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.description];
+                [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+            } else {
+                CDVPluginResult* result  = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:personalizationToken];
+                [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+            }
+        }];
+    }
 }
 
 - (void)requestAuthorization:(CDVInvokedUrlCommand*)command
@@ -53,6 +83,7 @@
         }];
     }];
 }
+
 - (void)playTrack:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = [command callbackId];

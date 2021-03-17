@@ -53,6 +53,9 @@ module.exports = {
     playTrack: function (trackId, successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "playTrack", [trackId]);
     },
+    requestToken: function (developerToken, successCallback, errorCallback) {
+        exec(successCallback, errorCallback, "AppleMusic", "requestToken", [developerToken]);
+    },
     requestAuthorization: function (successCallback, errorCallback) {
         exec(successCallback, errorCallback, "AppleMusic", "requestAuthorization", []);
     },
